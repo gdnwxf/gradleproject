@@ -1,0 +1,55 @@
+//task define
+//defaultTasks 'taskB'
+//task taskA << {
+//println "i'm task A"
+//}
+//task taskB << {
+//println "i'm task B, and I depend on " + taskA.name
+//}
+//
+//taskB.dependsOn taskA
+
+apply plugin: 'maven'
+apply plugin: 'java'
+
+//dependencies {
+//compile('org.springframework:spring-core:2.5.6')
+//compile('org.springframework:spring-beans:2.5.6')
+//compile('org.springframework:spring-context:2.5.6')
+//compile('com.google.code.kaptcha:kaptcha:2.3:jdk15')
+//testCompile('junit:junit:4.7')
+//}
+
+//import org.gradle.plugins.ide.eclipse.model.Facet
+//apply plugin: 'maven'
+//apply plugin: 'java'
+//apply plugin: 'war'
+//apply plugin: 'eclipse-wtp'
+//sourceCompatibility = 1.8   // 设置 JDK 版本
+//webAppDirName = 'WebContent'    // 设置 WebApp 根目录
+//sourceSets.main.java.srcDir 'src'   // 设置 Java 源码所在目录
+
+sourceCompatibility = 1.8 
+
+repositories {
+    mavenCentral()
+    //maven { url '' } // 自定义库地址
+    mavenRepo urls: "http://repository.sonatype.org/content/groups/forge/"
+}
+
+
+dependencies {
+	compile group: 'org.springframework', name: 'spring-core', version: '5.0.0.M5'
+    // This dependency is exported to consumers, that is to say found on their compile classpath.
+    compile 'org.apache.commons:commons-math3:3.6.1'
+
+    // This dependency is used internally, and not exposed to consumers on their own compile classpath.
+    implementation 'com.google.guava:guava:21.0'
+	compile 'mysql:mysql-connector-java:5.1.38'
+	compile 'org.springframework:spring-core:5.0.0.M5'
+    // Use JUnit test framework
+    testImplementation 'junit:junit:4.12'
+    
+    // https://mvnrepository.com/artifact/org.springframework/spring-core
+    
+}
