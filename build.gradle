@@ -34,7 +34,7 @@ sourceCompatibility = 1.8
 repositories {
     mavenCentral()
     //maven { url '' } // 自定义库地址
-    mavenRepo urls: "http://repository.sonatype.org/content/groups/forge/"
+    //mavenRepo urls: "http://repository.sonatype.org/content/groups/forge/"
 }
 
 
