@@ -37,13 +37,16 @@ repositories {
     mavenCentral()
     //maven { url '' } // 自定义库地址  可以配置多个
     //定义spring 5的版本仓库 
-    maven { url 'https://artifacts.alfresco.com/nexus/content/repositories/public' } // 自定义库地址
+    maven { url 'http://central.maven.org/maven2/' } // 自定义库地址
     maven { url 'https://artifacts.alfresco.com/nexus/content/repositories/public' } // 自定义库地址
     //mavenRepo urls: "http://repository.sonatype.org/content/groups/forge/"
 }
 
 
 dependencies {
+// https://mvnrepository.com/artifact/net.coobird/thumbnailator
+    compile group: 'net.coobird', name: 'thumbnailator', version: '0.4.8'
+
 	// https://mvnrepository.com/artifact/org.springframework/spring-core
     compile group: 'org.springframework', name: 'spring-core', version: '5.0.0.M5'
     compile group: 'org.springframework', name: 'spring-core', version: '4.3.7.RELEASE'
